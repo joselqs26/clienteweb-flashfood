@@ -1,0 +1,9 @@
+.simpleInput {
+    position: relative;
+    height: 52px;
+    width: 100%;
+    max-width: 150px;
+    
+    color: white;
+    overflow: hidden;
+}

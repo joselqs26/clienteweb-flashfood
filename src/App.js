@@ -1,22 +1,46 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { simpleInput } from './components/js/simpleInput';
+import { simpleButton } from './components/js/simpleButton';
 
 function App() {
+  const [loginInfo, setLoginInfo] = useState( {'email' : '', 'password':'' } );
+
+  const setEmail = (value) => {
+    setLoginInfo( {...loginInfo, 'email': value } )
+  };
+
+  const setPassword = (value) => {
+    setLoginInfo( {...loginInfo, 'password': value } )
+  };
+
+  const enviarLogin = (loginInfo) => {
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="form-login">
+          <simpleInput 
+            type='email'
+            name='email'
+            label='Correo'
+            required={true}
+            onChange={ setEmail }
+          />
+          
+          <simpleInput
+            type='password'
+            name='password'
+            label='Contraseña'
+            required={true}
+            onChange={ setPassword }
+          />
+
+          <simpleButton value='LOGIN' onClick={ enviarLogin } />
+        </div>
       </header>
     </div>
   );
