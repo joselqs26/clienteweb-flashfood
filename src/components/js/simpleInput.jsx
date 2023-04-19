@@ -1,6 +1,6 @@
 import React from 'react'
 
-const simpleInput = ( { type, name, label, required, onChange } ) => {
+const SimpleInput = ( { type, name, label, required, onChange } ) => {
   return (
     <div className='simpleInput'>
         <input
@@ -19,4 +19,4 @@ const simpleInput = ( { type, name, label, required, onChange } ) => {
   )
 }
 
-export { simpleInput };
+export { SimpleInput };

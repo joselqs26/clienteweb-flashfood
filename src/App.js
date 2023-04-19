@@ -1,29 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import { simpleInput } from './components/js/simpleInput';
-import { simpleButton } from './components/js/simpleButton';
+import { SimpleInput } from './components/js/simpleInput';
+import { SimpleButton } from './components/js/simpleButton';
+import { enviarLogin } from './events/enviarLogin';
 
 function App() {
   const [loginInfo, setLoginInfo] = useState( {'email' : '', 'password':'' } );
 
-  const setEmail = (value) => {
-    setLoginInfo( {...loginInfo, 'email': value } )
+  const setEmail = (event) => {
+    setLoginInfo( {...loginInfo, 'email': event.target.value } )
   };
 
-  const setPassword = (value) => {
-    setLoginInfo( {...loginInfo, 'password': value } )
+  const setPassword = (event) => {
+    setLoginInfo( {...loginInfo, 'password': event.target.value } )
   };
 
-  const enviarLogin = (loginInfo) => {
-
+  const clickLogin = () => {
+    console.log( enviarLogin(loginInfo['email'], loginInfo['password']) );
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="form-login">
-          <simpleInput 
+          <SimpleInput 
             type='email'
             name='email'
             label='Correo'
@@ -31,7 +31,7 @@ function App() {
             onChange={ setEmail }
           />
           
-          <simpleInput
+          <SimpleInput
             type='password'
             name='password'
             label='Contraseña'
@@ -39,7 +39,7 @@ function App() {
             onChange={ setPassword }
           />
 
-          <simpleButton value='LOGIN' onClick={ enviarLogin } />
+          <SimpleButton value='LOGIN' onClick={ clickLogin } />
         </div>
       </header>
     </div>

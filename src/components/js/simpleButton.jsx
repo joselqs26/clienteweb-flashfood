@@ -1,6 +1,6 @@
 import React from 'react'
 
-const simpleButton = ( {value, onClick} ) => {
+const SimpleButton = ( {value, onClick} ) => {
   return (
     <input 
         type='button'
@@ -10,4 +10,4 @@ const simpleButton = ( {value, onClick} ) => {
   )
 }
 
-export { simpleButton };
+export { SimpleButton };
