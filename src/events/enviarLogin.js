@@ -1,12 +1,12 @@
 import { sendEvent } from "./core/eventsFunctions";
 
 function enviarLogin(email, password) {
-    const encodedEmail = btoa(email);
-    const encodedPassword = btoa(password);
+    const infoLogin = {email, password};
+    const encodedLogin = btoa(infoLogin);
     
     let result;
 
-    sendEvent( { email: encodedEmail , password: encodedPassword } )
+    sendEvent( encodedLogin )
       .then((response) => {
         result = response
       })
