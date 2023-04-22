@@ -2,7 +2,8 @@ import { sendEvent } from "./core/eventsFunctions.js";
 
 function enviarLogin(email, password) {
     const infoLogin = {email, password};
-    sendEvent( infoLogin );
+    const encodedLogin = btoa(infoLogin);
+    sendEvent( encodedLogin );
 }
 
 export {enviarLogin};
