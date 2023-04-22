@@ -1,0 +1,9 @@
+.titulo-container label{
+    color:#FDD13F;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

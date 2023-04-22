@@ -1,0 +1,19 @@
+.texto-logo{
+  color: #FDD13F;
+}
+
+.Login {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  gap: 5px;
+}
+
+.boton-container {
+  margin-top: 20px;
+}
