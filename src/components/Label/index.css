@@ -2,7 +2,8 @@
     color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 18px;
-
+    transform: translateY(140%);
+    z-index: 1;
     padding: 0px 0px 5px 15px;
 }
 

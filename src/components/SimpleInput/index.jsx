@@ -5,8 +5,10 @@ import "./index.css"
 const SimpleInput = ( { type, name, label, required, onChange } ) => {
   return (
     <div className='simpleInput'>
-        <Label text={label}></Label>
-        <input
+       
+        <input 
+
+            placeholder=' '
             type={type}
             name={name}
             required={required}
@@ -14,6 +16,10 @@ const SimpleInput = ( { type, name, label, required, onChange } ) => {
             onChange={onChange}
             className='regular-style'
         />
+        <Label text={label}></Label>
+        <div className='background'>
+          
+        </div>
     </div>
   )
 }
