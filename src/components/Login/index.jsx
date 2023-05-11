@@ -2,7 +2,7 @@ import './index.css';
 import { useState } from 'react';
 import { SimpleInput } from '../SimpleInput';
 import { SimpleButton } from '../SimpleButton';
-import { enviarLogin } from '../../events/enviarLogin';
+import { enviarLogin } from '../../events/funcionesLogin';
 import Label from "../Label";
 import Titulo from '../Titulo';
 import burger from './assets/burger.png'
