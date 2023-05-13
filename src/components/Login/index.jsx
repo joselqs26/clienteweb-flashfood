@@ -7,7 +7,6 @@ import Label from "../Label";
 import Titulo from '../Titulo';
 import burger from './assets/burger.png'
 
-
 const Login = (props) => {
     const [loginInfo, setLoginInfo] = useState({ 'email': '', 'password': '' });
 
@@ -50,7 +49,7 @@ const Login = (props) => {
             />
 
             <div className='boton-container'>
-                <SimpleButton value='LOGIN' onClick={clickLogin}/>
+                <SimpleButton value='LOGIN' onClick={clickLogin} />
                 <a className='text-contraseña' href="#">¿Has olvidado tu contraseña?</a>
             </div>
         </div>

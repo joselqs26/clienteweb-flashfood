@@ -1,0 +1,11 @@
+.categoria{
+    background-color: rgb(255, 255, 255);
+    color: rgb(166, 0, 0);
+    margin: 10px;
+}
+
+
+h2{
+    text-align: left;
+    padding: 0px 15px;
+}

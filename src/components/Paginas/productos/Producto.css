@@ -1,0 +1,75 @@
+.container-producto{
+    background-color: rgb(255, 255, 255);
+    border: solid 3px;
+    border-color: rgb(255, 234, 0);
+    border-radius: 10px;
+
+    color: black;
+    margin: 20px 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+
+    position: relative;
+   
+}
+
+.produc-nombre{
+    margin: 2px;
+    font-weight: bold;
+    font-size: 25px;
+    max-width: calc(100% - 90px);
+   
+}
+.produc-precio{
+    margin: 2px;
+    color:rgb(166, 0, 0);
+    font-weight: bold;
+    
+}
+
+.produc-descripcion{
+    margin: 2px;
+    
+}
+
+
+/* BOTONES */
+.contador{
+    border: solid;
+    border-color: rgb(166, 0, 0);
+    border-radius: 10px;
+    height: 30px;
+    width: 80px;
+    display: flex;
+    align-items: baseline;
+    align-items: center;
+    position: relative;
+    position: absolute;
+
+    top: 25px;
+    right: 20px;    
+    
+}
+.btn-mas{
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+
+
+}
+
+.btn-menos{
+    background-color: transparent;
+    border: none;
+    font-size: 45px;
+    /* font-weight: bold; */
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    
+   
+}
+.span-num{
+    font-size: 20px;
+}

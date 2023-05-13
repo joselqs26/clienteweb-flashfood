@@ -1,11 +1,25 @@
-import React from "react";
+import React,{useState}from "react";
 import './Menu.css';
-const Menu = () =>{
+import {Link} from 'react-router-dom';
+
+const Menu = ({categorias}) =>{
+
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
         <div className="container-menu">
-            <div className="nav-container">
-                <h2>PRODUCTOS</h2>
+            <div className="nav-logo">PRODUCTOS</div>
+            
+            <div className= {`nav-items ${isOpen && "open"}`}>
+              
+                {  categorias.map(  cat => (<Link key={cat} to={"#"+ cat}> {cat} </Link> ))}
 
+            </div>
+
+            <div className={`nav-toggle ${isOpen && "open"}`} onClick={()=> setIsOpen (!isOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     );
