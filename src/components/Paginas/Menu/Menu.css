@@ -1,0 +1,10 @@
+*{
+ margin: 0px; 
+ 
+}
+
+.nav-container h2{
+     color: rgb(154, 0, 0);
+     background-color: black;
+     padding: 30px 100vw;
+}
