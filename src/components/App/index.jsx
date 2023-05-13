@@ -1,7 +1,10 @@
 import './index.css';
 import Login from '../Login';
+import { ReceiverEvents } from '../../events/ReceiverEvents/ReceiverEvents';
+import { ContextGeneralProvider } from '../../context/GeneralContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ProtectedRoute } from '../Router/ProtectedRoute';
 
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import Menu from '../Paginas/Menu/Menu';
 import Producto from '../Paginas/productos/productos';
 
