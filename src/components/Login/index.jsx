@@ -1,14 +1,24 @@
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ContextGeneral } from '../../context/GeneralContext';
+
 import './index.css';
-import { useState } from 'react';
 import { SimpleInput } from '../SimpleInput';
 import { SimpleButton } from '../SimpleButton';
 import { enviarLogin } from '../../events/funcionesLogin';
-import Label from "../Label";
 import Titulo from '../Titulo';
 import burger from './assets/burger.png'
 
 const Login = (props) => {
+    const { user } = useContext(ContextGeneral);
     const [loginInfo, setLoginInfo] = useState({ 'email': '', 'password': '' });
+    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log( user )
+        if( user?.idType === '1' ) navigate('/productos');
+    }, [user])
 
     const setEmail = (event) => {
         setLoginInfo({ ...loginInfo, 'email': event.target.value })

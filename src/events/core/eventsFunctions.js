@@ -4,11 +4,11 @@ const { ContainerClient } = require("@azure/storage-blob");
 const { BlobCheckpointStore } = require("@azure/eventhubs-checkpointstore-blob");
 
 // Event hubs 
-const fullyQualifiedNamespace = "Endpoint=sb://eventhub-flashfood.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessPolicy;SharedAccessKey=D7s1PbsGugJeWQaQpiwGJw199QvKqfIcX+AEhFJNPI4=;EntityPath=eventhub-flashfood";
+const fullyQualifiedNamespace = "Endpoint=sb://eventhub-flash-food.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessPolicy;SharedAccessKey=F15BHDT/eXASYLnB3omw00Li523nmb4CW+AEhDQUIsE=;EntityPath=eventhub-flashfood";
 const eventHubName = "eventhub-flashfood";
 const consumerGroup = "$Default"; // name of the default consumer group
 
-const blobConnectionString = "DefaultEndpointsProtocol=https;AccountName=azurestorageflashfood;AccountKey=Q6jixJ+fue/fsGGnVHn4Q2sVqpFM769twe+DyWMnoayFlvpwLjd0QRQKpoBYwbRdUp94Zo0plf20+AStea8meA==;EndpointSuffix=core.windows.net";
+const blobConnectionString = "DefaultEndpointsProtocol=https;AccountName=storageacountflashfood;AccountKey=R//snMT8pKVoyle/2WmtYFG+KJxB2NU4AHkj5LS8nO07CNgWx78k0J+ZlADj7D5AjBdxEN2Y9Ida+AStO6Pxnw==;EndpointSuffix=core.windows.net";
 const containerName =  "blobcontainer-flashfood";
 
 async function sendEvent(type, eventData) {

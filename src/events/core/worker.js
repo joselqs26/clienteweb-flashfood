@@ -2,14 +2,14 @@ import { EventHubConsumerClient } from "@azure/event-hubs";
 import { BlobServiceClient } from "@azure/storage-blob";
 
 function createWorker(callback) {
-    const fullyQualifiedNamespace = "Endpoint=sb://eventhub-flashfood.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessPolicy;SharedAccessKey=D7s1PbsGugJeWQaQpiwGJw199QvKqfIcX+AEhFJNPI4=;EntityPath=eventhub-flashfood";
+    const fullyQualifiedNamespace = "Endpoint=sb://eventhub-flash-food.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessPolicy;SharedAccessKey=F15BHDT/eXASYLnB3omw00Li523nmb4CW+AEhDQUIsE=;EntityPath=eventhub-flashfood";
     const eventHubName = "eventhub-flashfood";
     const consumerGroup = "cliente";
 
     const containerName = "blobcontainer-flashfood";
 
-    const sasTokenContainer = "sp=racwdli&st=2023-05-06T02:25:16Z&se=2024-05-05T10:25:16Z&sv=2021-12-02&sr=c&sig=tOaeZ1cNsC41M360iaPr%2FDWZ9O00grFl0T4gPLLIdFA%3D";
-    const accountName = "azurestorageflashfood";
+    const sasTokenContainer = "sp=racwdli&st=2023-05-17T02:23:52Z&se=2023-05-17T10:23:52Z&sv=2022-11-02&sr=c&sig=T%2B0RkHQLpxKdqwehLvmuFEqREH69We8d38cMMU9Y3Do%3D";
+    const accountName = "storageacountflashfood";
 
     const blobServiceClient = new BlobServiceClient(
         `https://${accountName}.blob.core.windows.net/?${sasTokenContainer}`

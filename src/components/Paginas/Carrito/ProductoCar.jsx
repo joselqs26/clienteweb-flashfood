@@ -1,19 +1,23 @@
-
 import React, { useContext, useState } from 'react';
-import "./Producto.css"
 import { ProductosContext } from "../../../context/ProductosContext";
+import "./ProductoCar.css"
 
-const Producto = ({ producto }) => {
+
+const ProductoCar = ({ producto_car }) => {
     const {
         pedido, setPedido
     } = useContext(ProductosContext);
 
-    const [count, setCount] = useState(pedido[`${producto.idProducto}`] || 0);
+    console.log( producto_car );
+
+    const producto = producto_car.product;
+
+    const [count, setCount] = useState(producto_car.cantidad || 0);
 
     function onClickMas() {
         const newPedido = {...pedido};
         const count_up = (count + 1);
-        const id = producto.idProducto;
+        const id = producto_car['id'];
 
         newPedido[ id ] = count_up;
 
@@ -26,7 +30,7 @@ const Producto = ({ producto }) => {
             if( count != 1 ) {
                 const newPedido = {...pedido};
                 const count_down = (count - 1);
-                const id = producto.idProducto;
+                const id = producto_car['id'];
 
                 newPedido[ id ] = count_down;
 
@@ -34,7 +38,7 @@ const Producto = ({ producto }) => {
             } else {
                 const oldPedido = {...pedido};
                 const newPedido = {};
-                const id = producto.idProducto;
+                const id = producto_car['id'];
 
                 Object.keys( oldPedido ).forEach( key => {
                     if( key != id ) { newPedido[ key ] = oldPedido[ key ]};
@@ -48,13 +52,11 @@ const Producto = ({ producto }) => {
     }
 
     return (
-        <div className="container-producto">
+        <div className="producto-car">
 
             <p className="produc-nombre">{producto.nombre}</p>
 
-            <p className="produc-precio">${producto.precio}</p>
-
-            <p className="produc-descripcion"> {producto.descripcion} </p>
+            <p className="produc-subtotal">Subtotal: ${producto.precio * count}</p>
 
             <div className="contador">
 
@@ -77,4 +79,4 @@ const Producto = ({ producto }) => {
 
 }
 
-export default Producto
+export default ProductoCar

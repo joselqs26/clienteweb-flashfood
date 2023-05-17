@@ -1,22 +1,34 @@
-import React,{useState}from "react";
+import React, { useState } from "react";
 import './Menu.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Menu = ({categorias}) =>{
-
+const Menu = ({ categorias }) => {
     const [isOpen, setIsOpen] = useState(false)
+
+    function scrollToElement(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            const scrollPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: scrollPosition - 80,
+                behavior: 'smooth'
+            });
+        }
+    }
 
     return (
         <div className="container-menu">
             <div className="nav-logo">PRODUCTOS</div>
-            
-            <div className= {`nav-items ${isOpen && "open"}`}>
-              
-                {  categorias.map(  cat => (<Link key={cat} to={"#"+ cat}> {cat} </Link> ))}
+
+            <div className={`nav-items ${isOpen && "open"}`}>
+
+                {categorias.map(cat => (
+                    <Link key={cat} to={`#${cat}`} onClick={() => {scrollToElement(cat)}}> {cat} </Link>
+                ))}
 
             </div>
 
-            <div className={`nav-toggle ${isOpen && "open"}`} onClick={()=> setIsOpen (!isOpen)}>
+            <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
                 <span></span>
                 <span></span>
                 <span></span>

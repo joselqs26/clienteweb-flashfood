@@ -10,6 +10,11 @@
      position: fixed;
      z-index: 10;
      left: 0px;
+     top: 0;
+}
+
+.container-menu + * {
+     margin-top: 80px !important;
 }
 
 .nav-logo{
