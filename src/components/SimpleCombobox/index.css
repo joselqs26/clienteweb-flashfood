@@ -1,0 +1,16 @@
+.simpleCombobox {
+    background-color: #191516;
+    border-radius: 10px;
+
+    border: solid #FDD13F;
+
+    color: #FFF;
+
+    height: 40px;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.simpleCombobox:focus-visible {
+    outline: none;
+}

@@ -8,7 +8,7 @@ function createWorker(callback) {
 
     const containerName = "blobcontainer-flashfood";
 
-    const sasTokenContainer = "sp=racwdli&st=2023-05-17T02:23:52Z&se=2023-05-17T10:23:52Z&sv=2022-11-02&sr=c&sig=T%2B0RkHQLpxKdqwehLvmuFEqREH69We8d38cMMU9Y3Do%3D";
+    const sasTokenContainer = "sp=racwdli&st=2023-05-19T02:07:00Z&se=2023-05-19T10:07:00Z&sv=2022-11-02&sr=c&sig=%2BMUfRuOPvFMEJ3x1btz8nx3F%2BANnmZQld0wh2DS3IPE%3D";
     const accountName = "storageacountflashfood";
 
     const blobServiceClient = new BlobServiceClient(

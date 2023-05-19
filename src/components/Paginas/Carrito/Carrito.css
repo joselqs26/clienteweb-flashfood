@@ -75,11 +75,42 @@
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax( calc( 100% - 210px ) , calc( 80% - 10px ) ) minmax(190px , calc( 20% - 10px ) );
+
+    gap: 20px;
+
     color: #FFF;
 
-    padding: 20px 10px;
+    padding: 20px 15px;
     font-size: 20px;
     font-weight: bold;
+}
+
+.carrito_description .total-label {
+    grid-area: "label-1";
+}
+
+.carrito_description .total-text {
+    grid-area: "value-1";
+    text-align: left;
+    
+    align-self: stretch;
+    justify-self: end;
+}
+
+.carrito_description .mesa-label {
+    grid-area: "label-2";
+}
+
+.carrito_description .simpleCombobox {
+    grid-area: "value-2";
+    width: 130px;
+    
+    align-self: stretch;
+    justify-self: end;
+}
+
+.carrito_description .boton-secundario {
+    justify-self: end;
 }

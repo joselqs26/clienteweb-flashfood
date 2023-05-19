@@ -8,7 +8,6 @@ const Productos = () => {
     const { 
         productos, setProductos,
         categorias, setCategorias,
-        pedido, setPedido
     } = useContext(ProductosContext);
 
     useEffect(() => {
@@ -35,11 +34,6 @@ const Productos = () => {
         }
     });
 
-    useEffect( () => {
-        console.log( pedido )
-    }, [pedido])
-
-    
     return (
         <div>
             <Menu categorias={categorias}/>

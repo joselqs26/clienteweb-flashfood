@@ -23,7 +23,9 @@ const Menu = ({ categorias }) => {
             <div className={`nav-items ${isOpen && "open"}`}>
 
                 {categorias.map(cat => (
-                    <Link key={cat} to={`#${cat}`} onClick={() => {scrollToElement(cat)}}> {cat} </Link>
+                    <Link key={cat} to={`/productos#${cat}`} onClick={() => {setTimeout(() => {
+                        scrollToElement(cat)
+                    }, 300)}}> {cat} </Link>
                 ))}
 
             </div>

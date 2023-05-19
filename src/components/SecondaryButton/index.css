@@ -1,0 +1,14 @@
+.boton-secundario{
+    background-color: #191516;
+    border-radius: 30px;
+    border: solid rgb(166, 0, 0);
+    color: aliceblue; 
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.boton-secundario:hover{
+    cursor: pointer;
+}

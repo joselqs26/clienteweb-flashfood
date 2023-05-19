@@ -11,7 +11,6 @@
     padding: 20px 10px;
 
     position: relative;
-   
 }
 
 .produc-nombre{
@@ -19,8 +18,8 @@
     font-weight: bold;
     font-size: 25px;
     max-width: calc(100% - 90px);
-   
 }
+
 .produc-precio{
     margin: 2px;
     color:rgb(166, 0, 0);
@@ -30,7 +29,6 @@
 
 .produc-descripcion{
     margin: 2px;
-    
 }
 
 
@@ -44,32 +42,27 @@
     display: flex;
     align-items: baseline;
     align-items: center;
-    position: relative;
     position: absolute;
 
     top: 25px;
     right: 20px;    
-    
+    justify-content: space-between;
 }
+
 .btn-mas{
     background-color: transparent;
     border: none;
     font-size: 25px;
-
-
 }
 
 .btn-menos{
     background-color: transparent;
     border: none;
     font-size: 45px;
-    /* font-weight: bold; */
-    position: absolute;
-    top: -15px;
-    right: 10px;
-    
-   
+    position: relative;
+    top: -4px;
 }
+
 .span-num{
     font-size: 20px;
 }
