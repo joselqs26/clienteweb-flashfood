@@ -4,6 +4,7 @@ import React from 'react'
 
 const SimpleCombobox = ({options, onChange}) => {
     const handleComboBoxChange = (event) => {
+        console.log( event.target.value )
         onChange(event.target.value);
     };
 

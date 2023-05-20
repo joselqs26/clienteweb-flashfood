@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { ProductosContext } from '../../../context/ProductosContext';
 
@@ -13,14 +13,21 @@ import { ContextGeneral } from '../../../context/GeneralContext';
 import { enviarNuevoPedido } from '../../../events/funcionesPedidos';
 
 const Carrito = () => {
+    const navigate = useNavigate();
+
     const { 
         productos,
         categorias,
-        pedido,
+        pedido, setPedido,
         mesa, setMesa
     } = useContext(ProductosContext);
     const { user } = useContext(ContextGeneral);
     const [mesas, setMesas] = useState([]);
+
+    const resetContext = () => {
+        setPedido([]);
+        setMesa( 0 );
+    }
 
     const arrProduct = Object.keys( pedido ).map( key_i => {
         let product = {}
@@ -44,16 +51,25 @@ const Carrito = () => {
     const enviarPedido = () => {
         console.log( arrProduct )
 
+        console.log( user.idUser ); 
+        console.log( mesa );
+        console.log( arrProduct.length > 0 )
+
         if( user.idUser && mesa && arrProduct.length > 0 ) {
-            const pedidoArr = arrProduct.map( ({id, cantidad}) => ({idProducto: id, cantidad}) );
+            const pedidoArr = arrProduct.map( ({id, cantidad}) => ({IdProducto: parseInt( id ), Cantidad: parseInt( cantidad )}) );
 
             const pedidoObj = { 
-                idMesero : user.idUser,
-                idMesa : mesa,
-                pedido: pedidoArr 
+                IdMesero : parseInt( user.idUser ),
+                IdMesa : parseInt( mesa ),
+                Pedidos: pedidoArr 
             };
 
+            console.log( pedidoObj )
+
             enviarNuevoPedido( pedidoObj );
+
+            resetContext();
+            navigate('/productos');
         }
     }
 
@@ -64,6 +80,7 @@ const Carrito = () => {
                 console.log(JSON.stringify(data))
                 const mesasDesocupadas = [...data.filter((mesa) => mesa.estado.trim() === 'Desocupado')];
                 setMesas(mesasDesocupadas);
+                setMesa(mesasDesocupadas[0].idMesa)
             })
             .catch((err) => {
                 console.log(err.message);

@@ -8,7 +8,7 @@ function createWorker(callback) {
 
     const containerName = "blobcontainer-flashfood";
 
-    const sasTokenContainer = "sp=racwdli&st=2023-05-19T02:07:00Z&se=2023-05-19T10:07:00Z&sv=2022-11-02&sr=c&sig=%2BMUfRuOPvFMEJ3x1btz8nx3F%2BANnmZQld0wh2DS3IPE%3D";
+    const sasTokenContainer = "sp=racwdli&st=2023-05-20T01:06:39Z&se=2023-06-20T09:06:39Z&sv=2022-11-02&sr=c&sig=AtEIlHShr9frbCWvrvZOITwZqAQDUDuSSu28Cg1PJEo%3D";
     const accountName = "storageacountflashfood";
 
     const blobServiceClient = new BlobServiceClient(
@@ -29,7 +29,7 @@ function createWorker(callback) {
     const subscription = client.subscribe({
         processEvents: async (events) => {
             console.log(events);
-            if (events[0]?.body.type === "send_login") {
+            if (events[0]?.body.type === "send_login" || events[0]?.body.type === "send_pedido") {
                 const eventContent = JSON.stringify(events[0].body);
                 const blobClient = containerClient.getBlobClient(containerName);
                 const blockBlobClient = blobClient.getBlockBlobClient();

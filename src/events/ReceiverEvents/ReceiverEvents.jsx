@@ -17,6 +17,10 @@ function ReceiverEvents() {
             const objUser = jwt.decode(tokenStr);
 
             handleUpdateUser( { idUser: objUser.idUser , idType: objUser.idType } );
+        } else if( newEvent?.body.type === "send_pedido" ) {
+            console.log( 'NuevoPedido' )
+            const idNuevoPedido = newEvent.body.data;
+            console.log( 'idNuevoPedido - ' + idNuevoPedido )
         }
     } 
 
