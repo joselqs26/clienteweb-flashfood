@@ -1,12 +1,10 @@
 import { EventHubConsumerClient } from "@azure/event-hubs";
 import { BlobServiceClient } from "@azure/storage-blob";
-import { useContext } from "react";
-import { ContextGeneral } from "../../context/GeneralContext";
 
 function createWorker(user,callback) {
     const fullyQualifiedNamespace = "Endpoint=sb://eventhub-flash-food.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessPolicy;SharedAccessKey=F15BHDT/eXASYLnB3omw00Li523nmb4CW+AEhDQUIsE=;EntityPath=eventhub-flashfood";
     const eventHubName = "eventhub-flashfood";
-    const consumerGroup = `cliente${user.idType}`;
+    const consumerGroup = `cliente`;
 
     const containerName = "blobcontainer-flashfood";
 
@@ -31,7 +29,7 @@ function createWorker(user,callback) {
     const subscription = client.subscribe({
         processEvents: async (events) => {
             console.log(events);
-            if ((user === {} && events[0]?.body.type === "send_login") || (user.idType === 2 && events[0]?.body.type === "send_pedido")) {
+            if ((Object.keys( user ).length === 0 && events[0]?.body.type === "send_login") || (user.idType === '2' && events[0]?.body.type === "send_pedido")) {
                 const eventContent = JSON.stringify(events[0].body);
                 const blobClient = containerClient.getBlobClient(containerName);
                 const blockBlobClient = blobClient.getBlockBlobClient();

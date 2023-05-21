@@ -11,7 +11,7 @@
 
 .carrito_container h2{
     background-color: rgb(255, 255, 255);
-    color: rgb(166, 0, 0);
+    color: #D62246;
     margin: 10px;
 
     font-size: 1.5rem;
@@ -30,7 +30,7 @@
     
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(166, 0, 0);
+    border: 3px solid #D62246;
     width: 30px;
     height: 30px;
 

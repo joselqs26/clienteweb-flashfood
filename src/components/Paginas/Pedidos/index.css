@@ -1,0 +1,60 @@
+.container-header {
+    background-color: black;
+    height: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    left: 0px;
+    top: 0;
+}
+
+.container-header .nav-logo {
+    color: #D62246;
+}
+
+.container-header+* {
+    margin-top: 80px !important;
+}
+
+.nav-icon {
+    height: 60px;
+    margin-left: 15px;
+}
+
+.nav-icon img {
+    height: 60px;
+}
+
+
+
+.pedidos_container {
+    width: 100%;
+    max-height: calc(100vh - 80px);
+}
+
+.header_pedidos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pedidos_container h2{
+    background-color: rgb(255, 255, 255);
+    color: #D62246;
+    margin: 10px;
+
+    font-size: 1.5rem;
+
+    text-align: left;
+    padding: 0px 15px;
+}
+
+.pedidos_container .pedidos_list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr) );
+    justify-items: center;
+}

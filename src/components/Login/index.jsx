@@ -18,6 +18,7 @@ const Login = (props) => {
     useEffect(() => {
         console.log( user )
         if( user?.idType === '1' ) navigate('/productos');
+        if( user?.idType === '2' ) navigate('/pedidos');
     }, [user])
 
     const setEmail = (event) => {

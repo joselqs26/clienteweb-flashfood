@@ -18,7 +18,7 @@ const Menu = ({ categorias }) => {
 
     return (
         <div className="container-menu">
-            <div className="nav-logo">PRODUCTOS</div>
+            <div className="nav-logo">Productos</div>
 
             <div className={`nav-items ${isOpen && "open"}`}>
 

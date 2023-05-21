@@ -1,0 +1,19 @@
+.producto-pedido{
+    background-color: rgb(255, 255, 255);
+
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+
+    position: relative;
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.producto-pedido .contador{
+    width: 55px;
+    justify-content: center;
+    right: 15px;
+}

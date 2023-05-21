@@ -5,7 +5,7 @@ import { createWorker } from "../core/worker";
 import jwt from 'jsonwebtoken';
 
 function ReceiverEvents() {
-    const { user, updateUser } = useContext(ContextGeneral);
+    const { user, updateUser, flagPedido, setFlagPedido } = useContext(ContextGeneral);
 
     const handleUpdateUser = (user) => {
         updateUser(user);
@@ -21,11 +21,13 @@ function ReceiverEvents() {
             console.log( 'NuevoPedido' )
             const idNuevoPedido = newEvent.body.data;
             console.log( 'idNuevoPedido - ' + idNuevoPedido )
+
+            setFlagPedido( !flagPedido );
         }
     } 
 
     useEffect(() => {
-        const worker = createWorker((newEvents,user) => {
+        const worker = createWorker(user, (newEvents) => {
             // Agregar los nuevos eventos recibidos al estado
             newEvents.forEach(newEvent => {
                 eventHandler( newEvent );
@@ -38,7 +40,7 @@ function ReceiverEvents() {
             // Cerrar el worker cuando se desmonte el componente
             worker.terminate();
         };
-    }, [user]);
+    }, []);
 
     return (
         <>

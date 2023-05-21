@@ -8,7 +8,7 @@ const ProtectedRoute = ({idType, children}) => {
     if( user && user?.idType === idType ) {
         return children;
     } else {
-        return (<Navigate to="/Home" />)
+        return (<Navigate to="/login" />)
     }
 }
 

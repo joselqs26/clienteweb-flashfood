@@ -27,21 +27,16 @@ input.regular-style{
     margin-bottom: 10px;
 }
 
-/* .simpleInput label {
-   position: relative;
-   left: 10px;
-   transform: translateY(140%);
-   pointer-events: none;
-   top:50%
-   
-} */
+.simpleInput label {
+    transition: 0.5s;
+}
+
 .simpleInput:focus-within label,
 input:not(:placeholder-shown) + label{
     color: #000000;
     transform: translateY(-15%);
-    
-    transition: 0.5s;
 }
+
 .simpleInput .background{
     width: 100%;
     height: 50px;
@@ -57,28 +52,3 @@ input:not(:placeholder-shown) + label{
     position: absolute;
     top: 29px;
 }
-
-
-
-
-/* .label-text-simpleInput{
-    color:rgb(0, 0, 0) ;
-    margin: 10px;
-    
-} */
-
-/* .input-error{
-    border: 2px solid red;
-    color: red;
-    background-color: rgb(255, 206, 206);
-    width: 100%;
-    height: 60px;
-    font-size: 18px;
-    outline: none;
-    border-radius: 25px;
-    padding: 0 10px 0 20px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    
-    
-} */

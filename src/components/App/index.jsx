@@ -9,6 +9,7 @@ import './index.css';
 import Login from '../Login';
 import Productos from '../Paginas/Productos/productos';
 import Carrito from '../Paginas/Carrito/Carrito';
+import { Pedidos } from '../Paginas/Pedidos';
 
 const App = () => (
   <div className="App-main">
@@ -19,14 +20,25 @@ const App = () => (
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/productos' element={
-            <ProductosProvider>
-            <Productos />
-            </ProductosProvider>
+            <ProtectedRoute idType='1'>
+              <ProductosProvider>
+                <Productos />
+              </ProductosProvider>
+            </ProtectedRoute>
           } />
           <Route path='/carrito' element={
-            <ProductosProvider>
-            <Carrito />
-            </ProductosProvider>
+            <ProtectedRoute idType='1'>
+              <ProductosProvider>
+                <Carrito />
+              </ProductosProvider>
+            </ProtectedRoute>
+          } />
+          <Route path='/pedidos' element={
+            <ProtectedRoute idType='2'>
+              <ProductosProvider>
+                <Pedidos />
+              </ProductosProvider>
+            </ProtectedRoute>
           } />
         </Routes>
       </BrowserRouter>
