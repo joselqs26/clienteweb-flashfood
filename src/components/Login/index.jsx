@@ -19,6 +19,7 @@ const Login = (props) => {
         console.log( user )
         if( user?.idType === '1' ) navigate('/productos');
         if( user?.idType === '2' ) navigate('/pedidos');
+        if( user?.idType === '3' ) navigate('/cajero');
     }, [user])
 
     const setEmail = (event) => {

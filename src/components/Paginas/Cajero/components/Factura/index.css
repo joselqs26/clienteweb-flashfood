@@ -1,0 +1,26 @@
+
+
+.Label-total{
+    color: #D62246;
+    font-size: 18px;
+    /* left: 2px; */
+    font-weight: bold;
+    display: block;
+}
+
+.container-total{
+   
+    padding: 0px 15px 12px ;
+    
+}
+.pedido_btn_container{
+    margin: 20px 0px;
+    justify-content: space-between;
+}
+.precio-total{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+}
+

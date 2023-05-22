@@ -4,7 +4,7 @@ import { BlobServiceClient } from "@azure/storage-blob";
 function createWorker(user,callback) {
     const fullyQualifiedNamespace = "Endpoint=sb://eventhub-flash-food.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessPolicy;SharedAccessKey=F15BHDT/eXASYLnB3omw00Li523nmb4CW+AEhDQUIsE=;EntityPath=eventhub-flashfood";
     const eventHubName = "eventhub-flashfood";
-    const consumerGroup = `cliente`;
+    const consumerGroup = `cliente1`;
 
     const containerName = "blobcontainer-flashfood";
 

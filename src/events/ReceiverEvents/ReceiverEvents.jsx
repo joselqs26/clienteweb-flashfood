@@ -6,41 +6,47 @@ import jwt from 'jsonwebtoken';
 
 function ReceiverEvents() {
     const { user, updateUser, flagPedido, setFlagPedido } = useContext(ContextGeneral);
+    const [worker, setWorker] = useState(null);
 
     const handleUpdateUser = (user) => {
         updateUser(user);
     };
 
     const eventHandler = (newEvent) => {
-        if( newEvent?.body.type === "send_login" ) {
+        if (newEvent?.body.type === "send_login") {
             const tokenStr = newEvent.body.data;
             const objUser = jwt.decode(tokenStr);
 
-            handleUpdateUser( { idUser: objUser.idUser , idType: objUser.idType } );
-        } else if( newEvent?.body.type === "send_pedido" ) {
-            console.log( 'NuevoPedido' )
+            handleUpdateUser({ idUser: objUser.idUser, idType: objUser.idType });
+        } else if (newEvent?.body.type === "send_pedido") {
+            console.log('NuevoPedido')
             const idNuevoPedido = newEvent.body.data;
-            console.log( 'idNuevoPedido - ' + idNuevoPedido )
+            console.log('idNuevoPedido - ' + idNuevoPedido)
 
-            setFlagPedido( !flagPedido );
+            setFlagPedido(!flagPedido);
         }
-    } 
+    }
 
     useEffect(() => {
-        const worker = createWorker(user, (newEvents) => {
-            // Agregar los nuevos eventos recibidos al estado
+        worker?.terminate();
+
+        // Crear el worker inicial cuando se monte el componente
+        const newWorker = createWorker(user, (newEvents) => {
             newEvents.forEach(newEvent => {
-                eventHandler( newEvent );
+                eventHandler(newEvent);
             });
         });
 
-        // El worker se ejecutará en segundo plano y recibirá eventos continuamente
+        setWorker(newWorker);
+    }, [user]);
 
+    useEffect(() => {
         return () => {
-            // Cerrar el worker cuando se desmonte el componente
-            worker.terminate();
+            // Cerrar el worker anterior cuando se desmonte el componente o se cambie 'user'
+            worker?.terminate();
         };
     }, []);
+
 
     return (
         <>

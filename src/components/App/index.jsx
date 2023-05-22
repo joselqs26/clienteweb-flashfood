@@ -10,6 +10,7 @@ import Login from '../Login';
 import Productos from '../Paginas/Productos/productos';
 import Carrito from '../Paginas/Carrito/Carrito';
 import { Pedidos } from '../Paginas/Pedidos';
+import Cajero from '../Paginas/Cajero/Index';
 
 const App = () => (
   <div className="App-main">
@@ -40,6 +41,14 @@ const App = () => (
               </ProductosProvider>
             </ProtectedRoute>
           } />
+
+          <Route path='/cajero' element={
+            <ProtectedRoute idType='3'>
+              <ProductosProvider>
+                <Cajero/>
+              </ProductosProvider>
+            </ProtectedRoute>
+           } />
         </Routes>
       </BrowserRouter>
     </ContextGeneralProvider>
