@@ -3,8 +3,21 @@ import React from "react";
 import { SimpleButton } from "../../../../SimpleButton";
 import ProductoFactura from "../ProductoFactura";
 import './index.css'
+import { enviarPago } from "../../../../../events/funcionesPago";
 
-const Factura = ({pedido}) => {
+const Factura = ({pedido, info}) => {
+    const pagarPedido = () => {
+        let clon = [...info.pedidos]
+        let index = clon.indexOf( pedido );
+
+        clon[index] = {...pedido, estado: 'Pagado'}
+
+        console.log( pedido.idPedido )
+
+        info.setPedidos(clon)
+
+        enviarPago(pedido.idPedido);
+    }
 
     return (
         <div className="pedido">
@@ -24,9 +37,7 @@ const Factura = ({pedido}) => {
                         
                     </div>
 
-                    
-
-                    <SimpleButton value={'Pagado'} />
+                    <SimpleButton value={'Pagado'} onClick={pagarPedido} />
                 </div>
             </div>
         </div>
