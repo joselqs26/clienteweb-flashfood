@@ -5,7 +5,7 @@ import { Pedido } from './components/Pedido';
 import { ContextGeneral } from '../../../context/GeneralContext';
 
 const Pedidos = () => {
-    const { flag } = useContext( ContextGeneral );
+    const { flagPedido } = useContext( ContextGeneral );
 
     const [pedidos, setPedidos] = useState( [] );
 
@@ -27,7 +27,7 @@ const Pedidos = () => {
 
     useEffect(() => {
         fetchPedidos();
-    }, [flag]);
+    }, [flagPedido]);
 
     return (
         <>

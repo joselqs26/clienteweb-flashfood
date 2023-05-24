@@ -29,7 +29,7 @@ function createWorker(user,callback) {
     const subscription = client.subscribe({
         processEvents: async (events) => {
             console.log(events);
-            if ((Object.keys( user ).length === 0 && events[0]?.body.type === "send_login") || (user.idType === '2' && events[0]?.body.type === "send_pedido")) {
+            if ((Object.keys( user ).length === 0 && events[0]?.body.type === "send_login") || (user.idType === '2' && events[0]?.body.type === "send_pedido") || (user.idType === '3' && events[0]?.body.type === "send_preparacion")) {
                 const eventContent = JSON.stringify(events[0].body);
                 const blobClient = containerClient.getBlobClient(containerName);
                 const blockBlobClient = blobClient.getBlockBlobClient();

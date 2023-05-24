@@ -44,7 +44,7 @@ const Cajero = () => {
             </div>
             <div className='pedidos_container'>
                 <header className='header_pedidos'>
-                    <h2>Pedidos</h2>
+                    <h2>Facturas</h2>
                 </header>
                 <div className='pedidos_list'>
                 {

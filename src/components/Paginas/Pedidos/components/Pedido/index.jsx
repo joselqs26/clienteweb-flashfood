@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ProductoPedido } from '../ProductoPedido';
 import './index.css';
 import { SimpleButton } from '../../../../SimpleButton';
+import { enviarNuevaPreparacion } from '../../../../../events/funcionesPreparacion';
 
 const Pedido = ({ pedido, info }) => {
     const [minutosTranscurridos, setMinutosTranscurridos] = useState(0);
@@ -28,7 +29,11 @@ const Pedido = ({ pedido, info }) => {
 
         clon[index] = {...pedido, estado: 'Completado'}
 
+        console.log( pedido.idPedido )
+
         info.setPedidos(clon)
+
+        enviarNuevaPreparacion(pedido.idPedido);
     }
 
     return (

@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 
 function ReceiverEvents() {
     const { user, updateUser, flagPedido, setFlagPedido } = useContext(ContextGeneral);
-    const [worker, setWorker] = useState(null);
+    const [ worker, setWorker ] = useState(null);
 
     const handleUpdateUser = (user) => {
         updateUser(user);
@@ -18,11 +18,8 @@ function ReceiverEvents() {
             const objUser = jwt.decode(tokenStr);
 
             handleUpdateUser({ idUser: objUser.idUser, idType: objUser.idType });
-        } else if (newEvent?.body.type === "send_pedido") {
-            console.log('NuevoPedido')
+        } else if (newEvent?.body.type === "send_pedido" || newEvent?.body.type === "send_preparacion") {
             const idNuevoPedido = newEvent.body.data;
-            console.log('idNuevoPedido - ' + idNuevoPedido)
-
             setFlagPedido(!flagPedido);
         }
     }
