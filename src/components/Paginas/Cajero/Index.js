@@ -7,7 +7,7 @@ import Factura from './components/Factura';
 
 const Cajero = () => {
 
-    const { flag } = useContext( ContextGeneral );
+    const { flagPedido } = useContext( ContextGeneral );
 
     const [pedidos, setPedidos] = useState( [] );
 
@@ -29,7 +29,7 @@ const Cajero = () => {
 
     useEffect(() => {
         fetchPedidos();
-    }, [flag]);
+    }, [flagPedido]);
 
 
 

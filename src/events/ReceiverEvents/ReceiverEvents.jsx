@@ -19,7 +19,7 @@ function ReceiverEvents() {
 
             handleUpdateUser({ idUser: objUser.idUser, idType: objUser.idType });
         } else if (newEvent?.body.type === "send_pedido" || newEvent?.body.type === "send_preparacion") {
-            const idNuevoPedido = newEvent.body.data;
+            // const idNuevoPedido = newEvent.body.data;
             setFlagPedido(!flagPedido);
         }
     }
